@@ -15,3 +15,4 @@ jobs:
         with:
           build: npm run build
           start: npm start
+          Record: true {87c57539-5522-41fd-8412-9937edeeebfe}

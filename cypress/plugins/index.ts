@@ -9,8 +9,6 @@ import codeCoverageTask from "@cypress/code-coverage/task";
 dotenv.config({ path: ".env.local" });
 dotenv.config();
 
-const awsConfig = require(path.join(__dirname, "../../aws-exports-es5.js"));
-
 export default (on, config) => {
   config.env.defaultPassword = process.env.SEED_DEFAULT_USER_PASSWORD;
   config.env.paginationPageSize = process.env.PAGINATION_PAGE_SIZE;
@@ -28,11 +26,6 @@ export default (on, config) => {
   config.env.okta_password = process.env.OKTA_PASSWORD;
   config.env.okta_domain = process.env.REACT_APP_OKTA_DOMAIN;
   config.env.okta_client_id = process.env.REACT_APP_OKTA_CLIENTID;
-
-  // Amazon Cognito
-  config.env.cognito_username = process.env.AWS_COGNITO_USERNAME;
-  config.env.cognito_password = process.env.AWS_COGNITO_PASSWORD;
-  config.env.awsConfig = awsConfig.default;
 
   // Google
   config.env.googleRefreshToken = process.env.GOOGLE_REFRESH_TOKEN;

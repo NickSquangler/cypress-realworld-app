@@ -10,9 +10,10 @@ jobs:
         uses: actions/checkout@v2
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
+      - name: Cypress install, run tests and record
+        uses: cypress-io/github-action@v2.9.7
         with:
-          build: npm run build
-          start: npm start
-          Record: true {87c57539-5522-41fd-8412-9937edeeebfe}
+         runTests: true
+         record: true
+        env:
+          CYPRESS_RECORD_KEY: 8ef3a184-0c12-4f21-9925-2841a226310a
